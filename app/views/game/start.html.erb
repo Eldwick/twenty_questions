@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Start a game bro!</h1>
+
+  <%= link_to("Be the Answerer", game_answerer_path(@game.id), class: 'btn btn-primary') %>
+  <%= link_to("Be the Questioner", game_questioner_path(@game.id), class: 'btn btn-primary') %>
+</div>

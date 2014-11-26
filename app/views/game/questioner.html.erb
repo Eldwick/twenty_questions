@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="askQuestion">
+    <div class="askBox">
+      <input type="text" id="question">
+      <button id="submitQuestion">Ask Question</button>
+    </div>
+  </div>
+
+  <h2>Questions Asked</h2>
+  <div class="questions">
+    <% @game.questions.each do |question| %>
+      <div class="question"><%= question.text %></div>
+      <div class="correctness"><%= question.correct_text %></div> 
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+questionerInitalize()
+</script>

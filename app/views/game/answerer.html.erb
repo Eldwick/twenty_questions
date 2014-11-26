@@ -1,0 +1,30 @@
+<div class="container">
+  <% unless @game.answer %>
+    <div class="createAnswer">
+      <div class="answerCreateBox">
+        <input type="text" name='answer' id="answer">
+        <button id="submitAnswer">Create Answer</button>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="answerShow"><%= @game.answer  %></div>
+  <h2>Questions Asked</h2>
+  <div class="questions">
+    <% @game.questions.each do |question| %>
+      <div class="question" data-id=<%= question.id %>>
+        <div class=''><%= question.text %></div>
+        <div class="correctness"><%= question.correct_text %></div>
+        <% if question.correct.nil? %>
+          <div class="questionResponses">
+            <button class='respondYes'>Yes</button>
+            <button class='respondNo'>No</button>
+          </div>
+        <% end %>
+      </div> 
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+  answererInitalize() 
+</script>
